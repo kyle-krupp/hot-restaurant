@@ -28,7 +28,6 @@ app.get('/api/waitlist', (req, res) => {
     return res.JSON(waitlast)
 })
 
-app.get()
 app.listen(PORT, () => {
     console.log(`Listening on PORT ${PORT}`)
 });
