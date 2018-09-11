@@ -1,67 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tables</title>
     <!--bootstrap cdn-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <!--custom css-->
     <link rel="stylesheet" href="./assets/style.css">
 </head>
+
 <body>
-    <div class = "container">
-        <h1 class = "text-center">Hot Restaurant</h1>
-    
-    <hr>
+    <div class="container">
+        <h1 class="text-center">Hot Restaurant</h1>
 
-    <h2 class = "text-center">Make your reservation</h2>
-    <br>
-    <div class = "text-center">
-        <a href = "/tables">
-        <button type = "button" class = "btn btn-lg btn-primary">
-            View Tables
-        </button>
-    </a>
-    <a href = "/">
-    <button type = "button" class = "btn btn-lg btn-default">
-        ...
-    </button>
-    </a>
-    </div>
+        <hr>
 
-    <form>
+        <h2 class="text-center">Make your reservation</h2>
+        <br>
+        <div class="text-center">
+            <a href="/tables">
+                <button type="button" class="btn btn-lg btn-primary">
+                    View Tables
+                </button>
+            </a>
+            <a href="/">
+                <button type="button" class="btn btn-lg btn-default">
+                    ...
+                </button>
+            </a>
+        </div>
+
+        <form>
             <div class="form-group">
-              <label for="Name">Name</label>
-              <input type="text" class="form-control" id= "name" aria-describedby="emailHelp" placeholder="Enter name">
-              
+                <label for="Name">Name</label>
+                <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name">
+
             </div>
 
             <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="text" class="form-control" id= "number" aria-describedby="emailHelp" placeholder="Enter your phone number">
-                    
-                  </div>
+                <label for="phone">Phone Number</label>
+                <input type="text" class="form-control" id="number" aria-describedby="emailHelp" placeholder="Enter your phone number">
 
-                  <div class="form-group">
-                        <label for="Name">Email</label>
-                        <input type="text" class="form-control" id= "email" aria-describedby="emailHelp" placeholder="Enter your email">
-                        
-                      </div>
+            </div>
 
-                      <div class="form-group">
-                            <label for="id">Unique ID</label>
-                            <input type="text" class="form-control" id= "id" aria-describedby="emailHelp" placeholder="Enter unique ID">
-                            
-                          </div>
+            <div class="form-group">
+                <label for="Name">Email</label>
+                <input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your email">
 
-                          <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+            <div class="form-group">
+                <label for="id">Unique ID</label>
+                <input type="text" class="form-control" id="id" aria-describedby="emailHelp" placeholder="Enter unique ID">
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
 
 
-
+    <a href="/api/tables">API Table Link</a> |
+    <a href="api/waitlist">API Wait List</a>
     </div>
-    
-    
+
+
 </body>
+
 </html>
