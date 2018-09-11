@@ -1,33 +1,54 @@
 const express = require('express');
-const parser = require('body-parser');
+const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 let tables = [];
-let waitlast = [];
+let waitlist = [];
+console.log('WHERE AM I')
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+app.post('/api/waitlist', function (request, response) {
+    let reservations = request.body;
+    console.log(reservations);
+
+    tables.push(reservations);
+    console.log(tables)
+    let booked;
+    if (reservations.length <= 5) {
+        booked = true;
+    } else {
+        booked = false
+    }
+
+    response.json(booked)
 });
 
-app.get('/tables', (req, res) => {
-    res.sendFile(path.join(__dirname, 'tables.html'));
+app.get('/', function (request, response) {
+    response.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/reserve', (req, res) => {
-    res.sendFile(path.join(__dirname, 'reserve.html'));
+app.get('/tables', function (request, response) {
+    response.sendFile(path.join(__dirname, 'tables.html'));
 });
 
-app.get('/api/tables', () => {
-    return res.JSON(tables)
+app.get('/reserve', function (request, response) {
+    response.sendFile(path.join(__dirname, 'reserve.html'));
 });
 
-app.get('/api/waitlist', (req, res) => {
-    return res.JSON(waitlast)
+app.get('/api/tables', function (request, response) {
+    return response.json(tables)
+});
+
+app.get('/api/waitlist', function (request, response) {
+    return response.json(waitlist)
 })
 
-app.listen(PORT, () => {
+app.listen(PORT, function () {
     console.log(`Listening on PORT ${PORT}`)
 });
